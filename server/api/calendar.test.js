@@ -12,8 +12,9 @@ describe('GET /api/calendar', () => {
       .expect('Content-Type', /json/)
       .expect(200);
 
+    console.log(req.body);
     expect(req.body).toMatchObject({
-      timeslots: expect.arrayContaining(['2021-11-24T14:00:00.000']),
+      timeslots: expect.arrayContaining(['2022-09-12T11:00:00.000Z']),
     });
   });
 });

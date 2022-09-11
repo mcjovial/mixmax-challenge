@@ -10,14 +10,14 @@ router.get('/api/calendar', async(req, res) => {
   // console.log('promises', promises);
   // const events = Promise.all(promises);
   const events = await Promise.all(promises);
-  const timeslots = avaialableSlots(events)
+  // const timeslots = 
 
   res.json({
     name: 'Eng. Test User',
     timeslotLengthMin: 60,
     // This is mock data that you should remove and replace with `db.calendar.findEventsForUser`.
     // See the README for more details.
-    timeslots,
+    timeslots: avaialableSlots(events)
 
     // timeslots: [
     //   '2021-11-24T14:00:00.000',
