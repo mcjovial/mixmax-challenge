@@ -17,13 +17,14 @@ const Index = () => {
 
   useEffect(() => {
     setCalendarResponse(null);
-
+    console.log(hostUserId, guestUserId);
     let url = `/api/calendar?hostUserId=${hostUserId}`;
     if (guestUserId) url += `&guestUserId=${guestUserId}`;
     fetch(url)
       .then((response) => response.json())
       .then((response) => {
         setCalendarResponse(response);
+        console.log(response);
       });
   }, [guestUserId]);
 

@@ -10,6 +10,7 @@ function formatTime(date) {
 }
 
 export default function Day({ timeslots, timeslotLengthMin }) {
+  console.log('check', timeslots[0]);
   const dayOfWeek = timeslots[0].toLocaleDateString(navigator.language, {
     weekday: 'short',
   });
@@ -31,6 +32,7 @@ export default function Day({ timeslots, timeslotLengthMin }) {
             timeslot.valueOf() + timeslotLengthMin * 60 * 1000
           );
           const endTimeString = formatTime(endTime);
+          console.log(startTimeString, endTimeString);
           return (
             <div
               className='sc-jzJRlG ilzEXd mb public-calendar__time-slot  text-center  milli  text-reverse'
